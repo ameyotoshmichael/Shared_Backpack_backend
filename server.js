@@ -28,7 +28,7 @@ app.use(mongoSanitize());//safety against NoSql Injections
 
 app.use(express_.json({ extended: false }));
 
-app.use(express_.static('.'));
+app.use('/node_modules', express.static(path.resolve(__dirname, '../node_modules')));
 
 let PORT = process.env.PORT || 4000;
 
